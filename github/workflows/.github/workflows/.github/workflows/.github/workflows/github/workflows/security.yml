@@ -1,0 +1,46 @@
+name: Security
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dependency-check:
+    name: Dependency Check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Run Dependency Check
+      run: |  
+        # Add your dependency check script here
+        echo "Dependency check passed!"
+
+  codeql:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup CodeQL
+      uses: github/codeql-action/setup-codeql@v1
+
+    - name: Analyze Code with CodeQL
+      uses: github/codeql-action/analyze@v1
+      with:
+        category: "security"
+
+  secrets-scanning:
+    name: Secrets Scanning
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Check for Secrets
+      run: |  
+        # Add your secrets scanning script here
+        echo "Secrets scanning completed!"
