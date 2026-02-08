@@ -1,0 +1,18 @@
+# 1. Clone your repo
+git clone https://github.com/saitongyuan36-cell/dolorpro-eng.git
+cd dolorpro-eng
+
+# 2. Create the directory structure
+mkdir -p .github/workflows
+mkdir -p docker
+
+# 3. Copy each workflow file I provided into .github/workflows/
+# (backend-ci.yml, frontend-ci.yml, mobile-ci.yml, etc.)
+
+# 4. Copy Dockerfiles to /docker/
+# 5. Copy docker-compose.yml to /docker/
+
+# 6. Commit and push
+git add .github/ docker/
+git commit -m "Add comprehensive CI/CD pipelines and Docker configs"
+git push origin main
